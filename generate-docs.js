@@ -230,9 +230,9 @@ async function generateDocs() {
   // ═══════════════════════════════════════════════════════════
   children.push(heading1("1. Project Overview"));
 
-  children.push(heading2(“1.1 What is Soma?”));
-  children.push(para(“Soma is an Ayurvedic period tracking app that combines ancient Indian wellness wisdom with modern cycle tracking. The name “Soma” refers to the moon and the sacred Ayurvedic elixir of life — evoking the lunar rhythms that mirror a woman's cycle.”));
-  children.push(para(“Unlike conventional period trackers, Soma maps each menstrual phase to its corresponding Ayurvedic dosha, providing personalized diet plans, yoga sequences, pranayama (breathing exercises), herbal recommendations, and daily rituals rooted in classical Ayurvedic texts like Charaka Samhita and Sushruta Samhita.”));
+  children.push(heading2("1.1 What is Soma?"));
+  children.push(para('Soma is an Ayurvedic period tracking app that combines ancient Indian wellness wisdom with modern cycle tracking. The name "Soma" refers to the moon and the sacred Ayurvedic elixir of life — evoking the lunar rhythms that mirror a woman\'s cycle.'));
+  children.push(para("Unlike conventional period trackers, Soma maps each menstrual phase to its corresponding Ayurvedic dosha, providing personalized diet plans, yoga sequences, pranayama (breathing exercises), herbal recommendations, and daily rituals rooted in classical Ayurvedic texts like Charaka Samhita and Sushruta Samhita."));
 
   children.push(heading2("1.2 Vision & Philosophy"));
   children.push(para("Let the product speak. No hype, no pitch decks, no investor meetings. Build something genuinely useful, put it where people can find it, and let word of mouth do what no ad campaign can.", { italic: true }));
@@ -495,12 +495,12 @@ async function generateDocs() {
   children.push(codeBlock("    key, english, sanskrit, dosha, doshaIcon, color, lightColor,"));
   children.push(codeBlock("    moon, desc,"));
   children.push(codeBlock("    shlokas: [{ sanskrit, transliteration, meaning, source }],"));
-  children.push(codeBlock("    science: \"...\","));
+  children.push(codeBlock('    science: \"...\",'));
   children.push(codeBlock("    mealPlan: { morning, lunch, evening, snacks, avoid },"));
   children.push(codeBlock("    yogaPoses: [{ name, sanName, benefit, instruction }],"));
   children.push(codeBlock("    pranayama: [{ name, benefit }],"));
   children.push(codeBlock("    herbs: [{ name, use }],"));
-  children.push(codeBlock("    ritual: [\"...\"]"));
+  children.push(codeBlock('    ritual: [\"...\"]'));
   children.push(codeBlock("  },"));
   children.push(codeBlock("  follicular: { ... },"));
   children.push(codeBlock("  ovulation: { ... },"));
@@ -548,7 +548,7 @@ async function generateDocs() {
   children.push(para("•  Dark background (#2C1A0E)", { font: "Arial" }));
   children.push(para("•  Lotus petal design in phase colors", { font: "Arial" }));
   children.push(para("•  Colored cycle ring arcs", { font: "Arial" }));
-  children.push(para(“•  “SOMA” text with gold gradient”, { font: “Arial” }));
+  children.push(para('•  "SOMA" text with gold gradient', { font: "Arial" }));
 
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -574,7 +574,7 @@ async function generateDocs() {
     { text: "Source: ", bold: true, size: 20, color: COLORS.gold },
     { text: "Charaka Samhita, Sharira Sthana 8/5", size: 20, color: COLORS.gold },
   ]));
-  children.push(para("“During menstruation, a woman should rest on a simple bed, eat light sattvic food from leaf plates, avoid daytime sleep, and refrain from exertion. She should be treated with tenderness and care.”", { italic: true }));
+  children.push(para('"During menstruation, a woman should rest on a simple bed, eat light sattvic food from leaf plates, avoid daytime sleep, and refrain from exertion. She should be treated with tenderness and care."', { italic: true }));
 
   children.push(heading3("Diet Plan"));
   children.push(makeTable(
@@ -627,7 +627,7 @@ async function generateDocs() {
     { text: "Source: ", bold: true, size: 20, color: COLORS.gold },
     { text: "Sushruta Samhita, Sharira Sthana 2/17", size: 20, color: COLORS.gold },
   ]));
-  children.push(para("“Pure, healthy menstrual blood is free from foul smell and resembles the colour of a red lotus flower or lac dye.”", { italic: true }));
+  children.push(para('"Pure, healthy menstrual blood is free from foul smell and resembles the colour of a red lotus flower or lac dye."', { italic: true }));
 
   // --- Ovulation Phase ---
   children.push(heading2("5.3 Ovulation Phase — Rutumati Kala", COLORS.ovulation));
@@ -726,7 +726,7 @@ async function generateDocs() {
     [
       ["Prakriti (Dosha) Quiz", "Personalized recommendations based on Vata/Pitta/Kapha constitution"],
       ["Weekly Meal Plans", "7-day Ayurvedic meal plans rotating with cycle phase and season, with grocery lists"],
-      ["Guided Yoga Sequences", "Illustrated step-by-step flows with timers (e.g., “10-min cramp relief flow”)"],
+      ["Guided Yoga Sequences", 'Illustrated step-by-step flows with timers (e.g., "10-min cramp relief flow")'],
       ["Herb Journal", "Track herbs taken, effects over cycles. Builds personal evidence"],
       ["Cycle History & Patterns", "Multi-month analytics: symptom correlations, seasonal patterns"],
       ["Seasonal (Ritucharya) Guides", "Diet/lifestyle guidance changing with seasons. Quarterly content drops"],
@@ -747,10 +747,10 @@ async function generateDocs() {
 
   children.push(heading2("7.4 Technical Next Steps"));
   children.push(para("1. Add blog section to the Vercel site (simple HTML pages, same design)", { font: "Arial" }));
-  children.push(para("2. Build the “Share your phase” card feature (shareable Instagram story image)", { font: "Arial" }));
+  children.push(para("2. Build the \"Share your phase\" card feature (shareable Instagram story image)", { font: "Arial" }));
   children.push(para("3. Build the Prakriti dosha quiz (premium feature #1)", { font: "Arial" }));
   children.push(para("4. Set up Stripe or Paddle for payments (both work well from Germany)", { font: "Arial" }));
-  children.push(para("5. Add a “What’s new” section in the app for content drops", { font: "Arial" }));
+  children.push(para("5. Add a \"What's new\" section in the app for content drops", { font: "Arial" }));
 
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -896,7 +896,7 @@ async function generateDocs() {
       ["Vercel hosting", "Free", "Now"],
       ["Domain (soma-app.com)", "€12/year", "Month 1"],
       ["Google Play developer account", "€25 one-time", "Month 2–3"],
-      [“Trademark “SOMA” (India)”, “~€50”, “Month 3–4”],
+      ['Trademark "SOMA" (India)', "~€50", "Month 3–4"],
       ["Substack / Medium", "Free", "Month 1"],
       ["Total Year 1", "~€90", "—"],
     ],
