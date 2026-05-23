@@ -1,0 +1,29 @@
+{
+  "appId": "com.soma.periodtracker",
+  "appName": "Soma",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "ios": {
+    "contentInset": "automatic",
+    "backgroundColor": "#FDF8F2"
+  },
+  "android": {
+    "backgroundColor": "#FDF8F2"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#2C1A0E",
+      "showSpinner": false,
+      "androidScaleType": "CENTER_CROP",
+      "splashFullScreen": true,
+      "splashImmersive": true
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#2C1A0E"
+    }
+  }
+}

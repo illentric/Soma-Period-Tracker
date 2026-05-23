@@ -1,0 +1,39 @@
+{
+  "name": "soma-period-tracker",
+  "version": "1.0.0",
+  "description": "Soma — Ayurvedic period tracking app with dosha-based guidance and ancient Indian wisdom",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build-prod.js",
+    "build:dev": "cp index.html manifest.json sw.js privacy.html terms.html splash.html www/ && cp -r icons www/",
+    "sync": "npm run build && npx cap sync",
+    "open:ios": "npx cap open ios",
+    "open:android": "npx cap open android",
+    "icons": "node generate-icons.js",
+    "splash": "node generate-splash.js"
+  },
+  "keywords": [
+    "menstrual",
+    "cycle",
+    "tracker",
+    "ayurveda",
+    "health",
+    "wellness"
+  ],
+  "author": "Shailja Dubey",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/ios": "^8.3.4",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2",
+    "canvas": "^3.2.3",
+    "docx": "^9.6.1"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0"
+  }
+}

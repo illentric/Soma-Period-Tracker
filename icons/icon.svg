@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2C1A0E"/>
+      <stop offset="100%" stop-color="#5C3317"/>
+    </linearGradient>
+    <linearGradient id="lotus1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#D4777C"/>
+      <stop offset="100%" stop-color="#F2B5B9"/>
+    </linearGradient>
+    <linearGradient id="lotus2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#E8878A"/>
+    </linearGradient>
+    <linearGradient id="lotus3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#A83228"/>
+      <stop offset="100%" stop-color="#D4777C"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5C842"/>
+      <stop offset="100%" stop-color="#D4A017"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <!-- Decorative circle -->
+  <circle cx="512" cy="460" r="260" fill="none" stroke="#F5C84220" stroke-width="3"/>
+  <circle cx="512" cy="460" r="300" fill="none" stroke="#F5C84210" stroke-width="2"/>
+  <!-- Lotus petals - back row -->
+  <ellipse cx="380" cy="440" rx="70" ry="160" transform="rotate(-25 380 440)" fill="url(#lotus1)" opacity="0.7"/>
+  <ellipse cx="644" cy="440" rx="70" ry="160" transform="rotate(25 644 440)" fill="url(#lotus1)" opacity="0.7"/>
+  <!-- Lotus petals - middle row -->
+  <ellipse cx="420" cy="420" rx="65" ry="170" transform="rotate(-12 420 420)" fill="url(#lotus2)" opacity="0.85"/>
+  <ellipse cx="604" cy="420" rx="65" ry="170" transform="rotate(12 604 420)" fill="url(#lotus2)" opacity="0.85"/>
+  <!-- Lotus petals - front center -->
+  <ellipse cx="512" cy="400" rx="60" ry="180" fill="url(#lotus3)"/>
+  <!-- Lotus center dot -->
+  <circle cx="512" cy="370" r="20" fill="#F5C842" opacity="0.9"/>
+  <!-- Cycle ring segments -->
+  <g transform="translate(512,460)">
+    <!-- Menstrual arc -->
+    <path d="M0,-200 A200,200 0 0,1 190,-62" fill="none" stroke="#B5341A" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+    <!-- Follicular arc -->
+    <path d="M198,-38 A200,200 0 0,1 38,196" fill="none" stroke="#2E8B57" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+    <!-- Ovulation arc -->
+    <path d="M14,200 A200,200 0 0,1 -140,142" fill="none" stroke="#D4A017" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+    <!-- Luteal arc -->
+    <path d="M-156,124 A200,200 0 0,1 -24,-199" fill="none" stroke="#7B5EA7" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+  </g>
+  <!-- App name -->
+  <text x="512" y="780" text-anchor="middle" font-family="Georgia, serif" font-size="88" font-weight="bold" fill="url(#gold)" letter-spacing="12">SAKHI</text>
+  <text x="512" y="830" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#C8B8A2" letter-spacing="6">AYURVEDIC CYCLE TRACKER</text>
+</svg>
