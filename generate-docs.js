@@ -1,4 +1,4 @@
-// Sakhi — Project Documentation Generator
+// Soma — Project Documentation Generator
 // Copyright (c) 2026 Shailja Dubey. All Rights Reserved.
 
 const fs = require('fs');
@@ -178,12 +178,12 @@ async function generateDocs() {
   children.push(new Paragraph({
     alignment: AlignmentType.CENTER,
     spacing: { after: 200 },
-    children: [new TextRun({ text: "SAKHI", size: 72, bold: true, color: COLORS.gold, font: "Georgia" })],
+    children: [new TextRun({ text: "SOMA", size: 72, bold: true, color: COLORS.gold, font: "Georgia" })],
   }));
   children.push(new Paragraph({
     alignment: AlignmentType.CENTER,
     spacing: { after: 100 },
-    children: [new TextRun({ text: "Ayurvedic Cycle Tracker", size: 36, color: COLORS.dark, font: "Georgia" })],
+    children: [new TextRun({ text: "Ayurvedic Period Tracking", size: 36, color: COLORS.dark, font: "Georgia" })],
   }));
   children.push(new Paragraph({
     alignment: AlignmentType.CENTER,
@@ -230,13 +230,13 @@ async function generateDocs() {
   // ═══════════════════════════════════════════════════════════
   children.push(heading1("1. Project Overview"));
 
-  children.push(heading2("1.1 What is Sakhi?"));
-  children.push(para("Sakhi is an Ayurvedic menstrual cycle tracker that combines ancient Indian wellness wisdom with modern cycle tracking. The name “Sakhi” means “friend” or “companion” in Sanskrit — a trusted companion who walks alongside women through every phase of their cycle."));
-  children.push(para("Unlike conventional period trackers, Sakhi maps each menstrual phase to its corresponding Ayurvedic dosha, providing personalized diet plans, yoga sequences, pranayama (breathing exercises), herbal recommendations, and daily rituals rooted in classical Ayurvedic texts like Charaka Samhita and Sushruta Samhita."));
+  children.push(heading2(“1.1 What is Soma?”));
+  children.push(para(“Soma is an Ayurvedic period tracking app that combines ancient Indian wellness wisdom with modern cycle tracking. The name “Soma” refers to the moon and the sacred Ayurvedic elixir of life — evoking the lunar rhythms that mirror a woman's cycle.”));
+  children.push(para(“Unlike conventional period trackers, Soma maps each menstrual phase to its corresponding Ayurvedic dosha, providing personalized diet plans, yoga sequences, pranayama (breathing exercises), herbal recommendations, and daily rituals rooted in classical Ayurvedic texts like Charaka Samhita and Sushruta Samhita.”));
 
   children.push(heading2("1.2 Vision & Philosophy"));
   children.push(para("Let the product speak. No hype, no pitch decks, no investor meetings. Build something genuinely useful, put it where people can find it, and let word of mouth do what no ad campaign can.", { italic: true }));
-  children.push(para("Ayurveda itself spread across the world not through marketing — but because it worked. Sakhi should grow the same way."));
+  children.push(para("Ayurveda itself spread across the world not through marketing — but because it worked. Soma should grow the same way."));
 
   children.push(heading2("1.3 Unique Value Proposition"));
   children.push(makeTable(
@@ -286,7 +286,7 @@ async function generateDocs() {
   children.push(heading1("2. Technical Architecture"));
 
   children.push(heading2("2.1 Architecture Overview"));
-  children.push(para("Sakhi is a client-side Progressive Web App (PWA) with no backend. All logic runs in the browser. Data persists in localStorage. The app is wrapped with Capacitor for native iOS/Android distribution."));
+  children.push(para("Soma is a client-side Progressive Web App (PWA) with no backend. All logic runs in the browser. Data persists in localStorage. The app is wrapped with Capacitor for native iOS/Android distribution."));
 
   children.push(heading3("Architecture Diagram", COLORS.purple));
   children.push(codeBlock("  ┌──────────────────────────────────────┐"));
@@ -329,7 +329,7 @@ async function generateDocs() {
   ));
 
   children.push(heading2("2.3 File Structure"));
-  children.push(codeBlock("sakhi-cycle-tracker/"));
+  children.push(codeBlock("soma-period-tracker/"));
   children.push(codeBlock("├── index.html              # Main app (HTML + CSS + JS, ~700 lines)"));
   children.push(codeBlock("├── privacy.html            # Privacy policy page"));
   children.push(codeBlock("├── terms.html              # Terms of service page"));
@@ -356,16 +356,14 @@ async function generateDocs() {
   children.push(makeTable(
     ["Key", "Type", "Description"],
     [
-      ["sakhi_period_start", "ISO Date String", "User’s last period start date"],
-      ["sakhi_cycle_length", "Number", "Average cycle length (default: 28)"],
-      ["sakhi_period_duration", "Number", "Period duration in days (default: 5)"],
-      ["sakhi_checkins", "JSON Object", "Daily mood and symptom check-ins keyed by date"],
+      ["soma_state", "JSON Object", "User’s period start date, cycle length, and period duration"],
+      ["soma_checkin_<date>", "JSON Object", "Daily mood and symptom check-ins keyed by date"],
     ],
     [2800, 2000, 4560]
   ));
 
   children.push(heading2("2.5 Dosha-Phase Mapping", COLORS.green));
-  children.push(para("Sakhi’s core innovation is mapping each menstrual phase to its dominant Ayurvedic dosha:"));
+  children.push(para("Soma’s core innovation is mapping each menstrual phase to its dominant Ayurvedic dosha:"));
   children.push(makeTable(
     ["Phase", "Dosha", "Color", "Days", "Ayurvedic Rationale"],
     [
@@ -404,7 +402,7 @@ async function generateDocs() {
   children.push(makeTable(
     ["Element", "Font", "Size", "Weight", "Usage"],
     [
-      ["App Logo", "Georgia", "22px", "Normal", "SAKHI in gold (#C9A96E)"],
+      ["App Logo", "Georgia", "22px", "Normal", "SOMA in gold (#C9A96E)"],
       ["Phase Headings", "Georgia", "22px", "Normal", "Phase name display"],
       ["Body Text", "Georgia", "14–15px", "Normal", "Descriptions, content"],
       ["Sanskrit Shlokas", "Georgia", "16px", "Normal", "Shloka text blocks"],
@@ -443,8 +441,8 @@ async function generateDocs() {
   children.push(makeTable(
     ["Property", "Value"],
     [
-      ["App Name", "Sakhi — Ayurvedic Cycle Tracker"],
-      ["Short Name", "Sakhi"],
+      ["App Name", "Soma — Ayurvedic Period Tracking App"],
+      ["Short Name", "Soma"],
       ["Display Mode", "standalone"],
       ["Orientation", "portrait"],
       ["Theme Color", "#2C1A0E"],
@@ -462,7 +460,7 @@ async function generateDocs() {
   // SECTION 4: COMPLETE CODE BASE
   // ═══════════════════════════════════════════════════════════
   children.push(heading1("4. Complete Code Base"));
-  children.push(para("This section contains a reference of every key file in the Sakhi project, with descriptions of their purpose and key code structures."));
+  children.push(para("This section contains a reference of every key file in the Soma project, with descriptions of their purpose and key code structures."));
 
   children.push(heading2("4.1 index.html — Main Application", COLORS.green));
   children.push(para("The entire application lives in a single HTML file (~700 lines). This is intentional — no build complexity, no module bundlers, no framework dependencies. The file contains:"));
@@ -491,7 +489,7 @@ async function generateDocs() {
   ));
 
   children.push(heading3("PHASES Data Structure", COLORS.purple));
-  children.push(para("The PHASES object is the heart of Sakhi’s content. Each phase contains:"));
+  children.push(para("The PHASES object is the heart of Soma’s content. Each phase contains:"));
   children.push(codeBlock("PHASES = {"));
   children.push(codeBlock("  menstrual: {"));
   children.push(codeBlock("    key, english, sanskrit, dosha, doshaIcon, color, lightColor,"));
@@ -511,7 +509,7 @@ async function generateDocs() {
 
   children.push(heading2("4.2 sw.js — Service Worker", COLORS.green));
   children.push(para("Cache-first service worker that enables offline functionality:"));
-  children.push(codeBlock("Cache Name: 'sakhi-v2'"));
+  children.push(codeBlock("Cache Name: 'soma-v1'"));
   children.push(codeBlock("Cached Assets: /, /index.html, /manifest.json, /privacy.html,"));
   children.push(codeBlock("              /terms.html, /icons/icon-192.png, /icons/icon-512.png"));
   children.push(codeBlock("Strategy: Cache-first (serve from cache, fallback to network)"));
@@ -530,8 +528,8 @@ async function generateDocs() {
   children.push(makeTable(
     ["Property", "Value"],
     [
-      ["App ID", "com.sakhi.cycletracker"],
-      ["App Name", "Sakhi"],
+      ["App ID", "com.soma.periodtracker"],
+      ["App Name", "Soma"],
       ["Web Directory", "www"],
       ["Android Scheme", "https"],
       ["Background Color", "#FDF8F2"],
@@ -550,7 +548,7 @@ async function generateDocs() {
   children.push(para("•  Dark background (#2C1A0E)", { font: "Arial" }));
   children.push(para("•  Lotus petal design in phase colors", { font: "Arial" }));
   children.push(para("•  Colored cycle ring arcs", { font: "Arial" }));
-  children.push(para("•  “SAKHI” text with gold gradient", { font: "Arial" }));
+  children.push(para(“•  “SOMA” text with gold gradient”, { font: “Arial” }));
 
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -558,7 +556,7 @@ async function generateDocs() {
   // SECTION 5: AYURVEDIC CONTENT REFERENCE
   // ═══════════════════════════════════════════════════════════
   children.push(heading1("5. Ayurvedic Content Reference"));
-  children.push(para("This section documents all Ayurvedic content embedded in the Sakhi app, organized by cycle phase."));
+  children.push(para("This section documents all Ayurvedic content embedded in the Soma app, organized by cycle phase."));
 
   // --- Menstrual Phase ---
   children.push(heading2("5.1 Menstrual Phase — Rajasrava Kala", COLORS.menstrual));
@@ -684,13 +682,13 @@ async function generateDocs() {
   children.push(heading2("6.2 Publishing Channels"));
   children.push(para("•  Blog on Vercel site (free) — simple HTML pages matching app design", { font: "Arial" }));
   children.push(para("•  Medium (built-in audience, free) — cross-post articles", { font: "Arial" }));
-  children.push(para('•  Substack newsletter "Sakhi Letters" — weekly Ayurvedic cycle wisdom', { font: "Arial" }));
+  children.push(para('•  Substack newsletter "Soma Letters" — weekly Ayurvedic cycle wisdom', { font: "Arial" }));
 
   children.push(heading2("6.3 Community Engagement"));
   children.push(makeTable(
     ["Platform", "Activity", "Frequency"],
     [
-      ["Reddit (r/Ayurveda, r/yoga, r/menstruation)", "Answer questions genuinely. Mention Sakhi only when relevant", "2–3x/week"],
+      ["Reddit (r/Ayurveda, r/yoga, r/menstruation)", "Answer questions genuinely. Mention Soma only when relevant", "2–3x/week"],
       ["Yoga/Ayurveda Facebook groups", "Share useful tips from app content", "1–2x/week"],
       ["Quora (period/Ayurveda questions)", "Write thoughtful answers, link to blog", "1x/week"],
     ],
@@ -710,7 +708,7 @@ async function generateDocs() {
     [
       ["1–3", "Write 12 blog articles. Share PWA link. Collect feedback", "200–500", "—"],
       ["4–6", "Launch on Google Play. Start Substack newsletter", "1,000–2,000", "—"],
-      ["7–9", "Launch Premium tier (Sakhi Sattvic)", "2,000–3,000", "€120–200/mo"],
+      ["7–9", "Launch Premium tier (Soma Sattvic)", "2,000–3,000", "€120–200/mo"],
       ["10–12", "Blog articles rank on Google. Organic growth compounds", "3,000–5,000", "€400–800/mo"],
       ["13–18", "Word of mouth. Sustainable side income", "5,000–10,000", "€800–1,500/mo"],
       ["18–24", "Growth accelerates without pushing harder", "15,000–30,000", "€2,000–4,000/mo"],
@@ -718,7 +716,7 @@ async function generateDocs() {
     [1200, 4160, 1800, 2200]
   ));
 
-  children.push(heading2("7.2 Premium Features (Sakhi Sattvic)"));
+  children.push(heading2("7.2 Premium Features (Soma Sattvic)"));
   children.push(richPara([
     { text: "Pricing: ", bold: true },
     { text: "€3.99/month or €29.99/year" },
@@ -763,7 +761,7 @@ async function generateDocs() {
 
   children.push(heading2("8.1 Local Development"));
   children.push(codeBlock("# Clone / navigate to project"));
-  children.push(codeBlock("cd sakhi-cycle-tracker"));
+  children.push(codeBlock("cd soma-period-tracker"));
   children.push(codeBlock(""));
   children.push(codeBlock("# Install dependencies"));
   children.push(codeBlock("npm install"));
@@ -858,7 +856,7 @@ async function generateDocs() {
   ));
 
   children.push(heading2("9.3 Deliberately Not Used"));
-  children.push(para("The following are intentionally excluded from Sakhi:"));
+  children.push(para("The following are intentionally excluded from Soma:"));
   children.push(para("•  Google Analytics / any analytics — no tracking of users", { font: "Arial" }));
   children.push(para("•  Firebase / any cloud database — all data stays on device", { font: "Arial" }));
   children.push(para("•  Ad networks — no advertisements ever", { font: "Arial" }));
@@ -876,17 +874,17 @@ async function generateDocs() {
   children.push(richPara([
     { text: "© 2026 Shailja Dubey. All Rights Reserved.", bold: true, size: 24 },
   ]));
-  children.push(para("All code, content, design, and Ayurvedic compilations in Sakhi are the intellectual property of Shailja Dubey. Protected under the Indian Copyright Act, 1957 and international copyright treaties (Berne Convention)."));
+  children.push(para("All code, content, design, and Ayurvedic compilations in Soma are the intellectual property of Shailja Dubey. Protected under the Indian Copyright Act, 1957 and international copyright treaties (Berne Convention)."));
 
   children.push(heading2("10.2 License"));
-  children.push(para("Sakhi uses a proprietary license that prohibits:"));
+  children.push(para("Soma uses a proprietary license that prohibits:"));
   children.push(para("•  Copying, modification, or distribution of source code", { font: "Arial" }));
   children.push(para("•  Commercial use or sublicensing", { font: "Arial" }));
   children.push(para("•  Reverse engineering or decompilation", { font: "Arial" }));
   children.push(para("•  Creating derivative works", { font: "Arial" }));
 
   children.push(heading2("10.3 Privacy Policy"));
-  children.push(para("Sakhi collects zero data remotely. All menstrual cycle data, moods, and symptoms are stored exclusively in the user’s browser localStorage. No data is ever transmitted to any server. No analytics, no cookies, no tracking pixels."));
+  children.push(para("Soma collects zero data remotely. All menstrual cycle data, moods, and symptoms are stored exclusively in the user’s browser localStorage. No data is ever transmitted to any server. No analytics, no cookies, no tracking pixels."));
 
   children.push(heading2("10.4 Governing Law"));
   children.push(para("All legal matters are governed by the laws of India, with jurisdiction in Indian courts. The Terms of Service reference both the Indian Copyright Act 1957 and the Information Technology Act 2000."));
@@ -896,9 +894,9 @@ async function generateDocs() {
     ["Item", "Cost", "When"],
     [
       ["Vercel hosting", "Free", "Now"],
-      ["Domain (sakhi-app.com)", "€12/year", "Month 1"],
+      ["Domain (soma-app.com)", "€12/year", "Month 1"],
       ["Google Play developer account", "€25 one-time", "Month 2–3"],
-      ["Trademark “SAKHI” (India)", "~€50", "Month 3–4"],
+      [“Trademark “SOMA” (India)”, “~€50”, “Month 3–4”],
       ["Substack / Medium", "Free", "Month 1"],
       ["Total Year 1", "~€90", "—"],
     ],
@@ -935,7 +933,7 @@ async function generateDocs() {
   children.push(heading1("12. What Success Looks Like"));
   children.push(para("Not a TechCrunch headline. Not a Series A.", { italic: true }));
   children.push(spacer());
-  children.push(para("•  10,000 women using Sakhi to understand their bodies better", { font: "Arial" }));
+  children.push(para("•  10,000 women using Soma to understand their bodies better", { font: "Arial" }));
   children.push(para("•  A steady €2,000–4,000/month flowing in while working from home in Berlin", { font: "Arial" }));
   children.push(para('•  An inbox with messages like "I finally understand why I feel this way during my luteal phase"', { font: "Arial" }));
   children.push(para("•  An app that reflects genuine knowledge, not growth hacking", { font: "Arial" }));
@@ -965,7 +963,7 @@ async function generateDocs() {
   // APPENDIX A: COMPLETE SOURCE CODE
   // ═══════════════════════════════════════════════════════════
   children.push(heading1("Appendix A: Complete Source Code"));
-  children.push(para("This appendix contains the complete, unmodified source code for every file in the Sakhi project. A developer can use these files to rebuild the entire application from scratch."));
+  children.push(para("This appendix contains the complete, unmodified source code for every file in the Soma project. A developer can use these files to rebuild the entire application from scratch."));
   children.push(spacer());
 
   const sourceFiles = [
@@ -1030,8 +1028,8 @@ async function generateDocs() {
   // ─── ASSEMBLE DOCUMENT ──────────────────────────────────
   const doc = new Document({
     creator: "Shailja Dubey",
-    title: "Sakhi — Complete Project Documentation",
-    description: "Comprehensive documentation for the Sakhi Ayurvedic Cycle Tracker application",
+    title: "Soma — Complete Project Documentation",
+    description: "Comprehensive documentation for the Soma Ayurvedic Period Tracking application",
     styles: {
       default: {
         document: {
@@ -1080,7 +1078,7 @@ async function generateDocs() {
             alignment: AlignmentType.RIGHT,
             border: { bottom: { style: BorderStyle.SINGLE, size: 1, color: COLORS.gold, space: 4 } },
             children: [
-              new TextRun({ text: "SAKHI ", size: 18, bold: true, color: COLORS.gold, font: "Georgia" }),
+              new TextRun({ text: "SOMA ", size: 18, bold: true, color: COLORS.gold, font: "Georgia" }),
               new TextRun({ text: "— Project Documentation", size: 18, color: COLORS.grayText, font: "Georgia", italics: true }),
             ],
           })],
@@ -1103,8 +1101,8 @@ async function generateDocs() {
   });
 
   const buffer = await Packer.toBuffer(doc);
-  fs.writeFileSync('/Users/shailjadubey/sakhi-cycle-tracker/Sakhi_App_Complete_Documentation.docx', buffer);
-  console.log('Documentation generated: Sakhi_App_Complete_Documentation.docx');
+  fs.writeFileSync('/Users/shailjadubey/Desktop/sakhi-cycle-tracker/Soma_App_Complete_Documentation.docx', buffer);
+  console.log('Documentation generated: Soma_App_Complete_Documentation.docx');
   console.log(`File size: ${(buffer.length / 1024).toFixed(1)} KB`);
 }
 
