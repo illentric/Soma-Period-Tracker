@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { createCanvas } = require('canvas');
+const { createCanvas, loadImage } = require('canvas');
 
 const splashSizes = [
   { name: 'splash-2732x2732', w: 2732, h: 2732 },
@@ -11,7 +11,7 @@ const splashSizes = [
   { name: 'splash-640x1136',  w: 640,  h: 1136  },
 ];
 
-function drawSplash(w, h) {
+function drawSplash(w, h, logoImg) {
   const canvas = createCanvas(w, h);
   const ctx = canvas.getContext('2d');
 
@@ -32,40 +32,16 @@ function drawSplash(w, h) {
   ctx.arc(cx, cy, 200 * scale, 0, Math.PI * 2);
   ctx.stroke();
 
-  // Lotus petals
-  function petal(px, py, rx, ry, angle, color, alpha) {
-    ctx.save();
-    ctx.globalAlpha = alpha;
-    ctx.translate(cx + px * scale, cy + py * scale);
-    ctx.rotate(angle * Math.PI / 180);
-    ctx.beginPath();
-    ctx.ellipse(0, 0, rx * scale, ry * scale, 0, 0, Math.PI * 2);
-    ctx.fillStyle = color;
-    ctx.fill();
-    ctx.restore();
-    ctx.globalAlpha = 1;
-  }
-
-  petal(-132, -20, 70, 160, -25, '#D4777C', 0.7);
-  petal(132, -20, 70, 160, 25, '#D4777C', 0.7);
-  petal(-92, -40, 65, 170, -12, '#C0392B', 0.85);
-  petal(92, -40, 65, 170, 12, '#C0392B', 0.85);
-  petal(0, -60, 60, 180, 0, '#A83228', 1);
-
-  // Center dot
-  ctx.beginPath();
-  ctx.arc(cx, cy - 90 * scale, 20 * scale, 0, Math.PI * 2);
-  ctx.fillStyle = '#F5C842';
-  ctx.globalAlpha = 0.9;
-  ctx.fill();
-  ctx.globalAlpha = 1;
+  // Logo image centered
+  const logoSize = 380 * scale;
+  ctx.drawImage(logoImg, cx - logoSize / 2, cy - logoSize / 2, logoSize, logoSize);
 
   // Cycle ring
   ctx.lineWidth = 14 * scale;
   ctx.lineCap = 'round';
   const ringR = 200 * scale;
   const arcs = [
-    { start: -Math.PI/2, end: Math.PI * 0.12, color: '#B5341A' },
+    { start: -Math.PI / 2, end: Math.PI * 0.12, color: '#B5341A' },
     { start: Math.PI * 0.15, end: Math.PI * 0.62, color: '#2E8B57' },
     { start: Math.PI * 0.65, end: Math.PI * 0.92, color: '#D4A017' },
     { start: Math.PI * 0.95, end: Math.PI * 1.47, color: '#7B5EA7' },
@@ -99,12 +75,15 @@ function drawSplash(w, h) {
   return canvas;
 }
 
-if (!fs.existsSync('resources')) fs.mkdirSync('resources');
+async function main() {
+  if (!fs.existsSync('resources')) fs.mkdirSync('resources');
+  const logoImg = await loadImage('icons/soma-logo.png');
+  for (const { name, w, h } of splashSizes) {
+    const canvas = drawSplash(w, h, logoImg);
+    fs.writeFileSync(`resources/${name}.png`, canvas.toBuffer('image/png'));
+    console.log(`Generated ${name}.png (${w}x${h})`);
+  }
+  console.log('All splash screens generated!');
+}
 
-splashSizes.forEach(({ name, w, h }) => {
-  const canvas = drawSplash(w, h);
-  fs.writeFileSync(`resources/${name}.png`, canvas.toBuffer('image/png'));
-  console.log(`Generated ${name}.png (${w}x${h})`);
-});
-
-console.log('All splash screens generated!');
+main().catch(console.error);
