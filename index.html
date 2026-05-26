@@ -159,18 +159,19 @@
     }
 
     .phase-wheel-wrap {
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
     }
 
     .phase-wheel canvas { display: block; }
 
     .phase-wheel-center {
-      position: relative;
-      top: -140px;
-      margin-bottom: -140px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -824,7 +825,7 @@
   <!-- Phase Hero -->
   <div id="phase-hero" class="phase-hero card">
     <div class="phase-wheel-wrap">
-      <canvas id="wheel-canvas" width="140" height="140"></canvas>
+      <canvas id="wheel-canvas" width="160" height="160"></canvas>
       <div class="phase-wheel-center">
         <span class="cycle-day-num" id="cycle-day-display">—</span>
         <span class="cycle-day-label">Cycle Day</span>
@@ -1374,7 +1375,7 @@ function renderPhaseHero() {
 function drawWheel(cycleDay) {
   const canvas = document.getElementById('wheel-canvas');
   const ctx = canvas.getContext('2d');
-  const W = 140, H = 140, cx = 70, cy = 70, r = 60, inner = 38;
+  const W = 160, H = 160, cx = 80, cy = 80, r = 68, inner = 44;
   ctx.clearRect(0, 0, W, H);
 
   const cl = state.cycleLength || 28;
