@@ -1,5 +1,5 @@
 // Soma — Copyright (c) 2026 Shailja Dubey. All Rights Reserved.
-const CACHE_NAME = 'soma-v1';
+const CACHE_NAME = 'soma-v2';
 const ASSETS = [
   '/',
   '/index.html',
